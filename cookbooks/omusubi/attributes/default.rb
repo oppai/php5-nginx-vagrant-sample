@@ -14,3 +14,5 @@ default['versions']['curl'] = '7.22.0*'
 default['versions']['imagemagick'] = '8:6.6.9.7*'
 default['versions']['php5-imagick'] = '3.1.0*'
 default['versions']['phpmyadmin'] = '*'
+
+default['mysql']['password'] = 'root'

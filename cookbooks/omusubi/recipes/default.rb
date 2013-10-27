@@ -25,6 +25,10 @@ execute "phpmyadmin-install" do
   command "ln -s /usr/share/phpmyadmin /usr/share/nginx/www/"
 end
 
+execute 'mysqladmin' do
+  command 'mysqladmin password -u root ' + node.default[:mysql][:password]
+end
+
 template "/etc/nginx/conf.d/php-fpm.conf" do
   mode 0644
   source "php-fpm.conf.erb"
@@ -40,7 +44,7 @@ service 'apache2' do
 end
 
 %w{mysql postgresql php5-fpm nginx}.each do |service_name|
-    service service_name do
-      action [:start, :restart]
-    end
+  service service_name do
+    action [:start, :restart]
+  end
 end
