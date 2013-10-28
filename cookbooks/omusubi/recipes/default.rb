@@ -21,12 +21,14 @@ execute "composer-install" do
   not_if { ::File.exists?("/usr/local/bin/composer")}
 end
 
-execute "phpmyadmin-install" do
-  command "ln -s /usr/share/phpmyadmin /usr/share/nginx/www/"
-end
-
 execute 'mysqladmin' do
   command 'mysqladmin password -u root ' + node.default[:mysql][:password]
+  not_if { ::File.exists?("/usr/share/nginx/www/phpmyadmin")}
+end
+
+execute "phpmyadmin-install" do
+  command "ln -s /usr/share/phpmyadmin /usr/share/nginx/www/"
+  not_if { ::File.exists?("/usr/share/nginx/www/phpmyadmin")}
 end
 
 template "/etc/nginx/conf.d/php-fpm.conf" do

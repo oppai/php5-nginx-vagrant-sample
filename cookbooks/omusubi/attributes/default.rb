@@ -13,6 +13,6 @@ default['versions']['postgresql'] = '9.1*'
 default['versions']['curl'] = '7.22.0*'
 default['versions']['imagemagick'] = '8:6.6.9.7*'
 default['versions']['php5-imagick'] = '3.1.0*'
-default['versions']['phpmyadmin'] = '*'
+default['versions']['phpmyadmin'] = '4:3.4*'
 
 default['mysql']['password'] = 'root'
