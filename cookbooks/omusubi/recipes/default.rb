@@ -27,8 +27,8 @@ execute 'mysqladmin' do
 end
 
 execute "phpmyadmin-install" do
-  command "ln -s /usr/share/phpmyadmin /usr/share/nginx/www/"
-  not_if { ::File.exists?("/usr/share/nginx/www/phpmyadmin")}
+  command "ln -s /usr/share/phpmyadmin/ /vagrant_data/"
+  not_if { ::File.exists?("/vagrant_data/phpmyadmin")}
 end
 
 template "/etc/nginx/conf.d/php-fpm.conf" do
