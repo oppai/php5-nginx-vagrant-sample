@@ -12,7 +12,7 @@ OS|Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-generic x86_64)
 PHP|PHP 5.3.10-1ubuntu3.6 with Suhosin-Patch
 Nginx|1.1.19
 MySQL|5.5.31-0ubuntu0.12.04.2 (Ubuntu)
-
+phpMyAdmin|3.4
 
 PHPカンファレンス関西2013の講演で使ったコードなど
 
